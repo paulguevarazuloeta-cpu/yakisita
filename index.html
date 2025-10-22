@@ -22,9 +22,7 @@
     <img src="descargar-removebg-preview.png" alt="WhatsApp" style="width: 80px; vertical-align: middle;">
   </a>
   <span style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size:25px;">ENVIOS A TODO EL PERÚ</span>
-</header>
-
-<style>
+</header><style>
   * {
     margin: 0;
     padding: 0;
@@ -89,13 +87,13 @@
     padding: 0;
   }
 
+  /* === GRID PRINCIPAL === */
   .products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 0;
-    justify-content: center;
-    align-items: stretch;
-    width: 100%;
+    grid-template-columns: repeat(6, 1fr); /* 6 por fila en PC */
+    gap: 15px;
+    padding: 20px;
+    justify-items: center;
   }
 
   .product {
@@ -104,6 +102,7 @@
     position: relative;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
   }
 
   .product:hover {
@@ -185,156 +184,114 @@
     color: black;
   }
 
+  /* === RESPONSIVE === */
+  @media (max-width: 1024px) {
+    .products {
+      grid-template-columns: repeat(4, 1fr); /* 4 por fila en tablets */
+    }
+  }
+
   @media (max-width: 768px) {
     .products {
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      grid-template-columns: repeat(2, 1fr); /* 2 por fila en celular */
     }
     .product img {
       height: 180px;
     }
   }
 </style>
-</head>
+
 <body>
+  <header>
+    <img src="marca1.png" width="120px" />
+    <div class="search-filter">
+      <input type="text" id="searchInput" placeholder="Buscar sandalias..." />
+      <select id="sortSelect">
+        <option value="default">Ordenar por</option>
+        <option value="low">Precio: menor a mayor</option>
+        <option value="high">Precio: mayor a menor</option>
+      </select>
+    </div>
+  </header>
 
-<header>
-  <img src="marca1.png" width="120px"/>
-  <div class="search-filter">
-    <input type="text" id="searchInput" placeholder="Buscar sandalias..." />
-    <select id="sortSelect">
-      <option value="default">Ordenar por</option>
-      <option value="low">Precio: menor a mayor</option>
-      <option value="high">Precio: mayor a menor</option>
-    </select>
-  </div>
-</header>
+  <main>
+    <div class="products" id="productList">
+      <!-- Copia tus productos aquí (ya se adaptarán automáticamente) -->
+      <!-- Te dejo algunos ejemplos -->
+      <div class="product" data-price="40">
+        <span class="label">OFERTA</span>
+        <img src="plateado tx5 1.jpg" alt="Sandalia Plateado" />
+        <span class="brand">D'Mirella</span>
+        <h3>TACO X5 PLATEADO</h3>
+        <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+        <p class="price">S/ 40.00</p>
+      </div>
 
-<main>
-  <div class="products" id="productList">
+      <div class="product" data-price="50">
+        <span class="label new">Nuevo</span>
+        <img src="https://via.placeholder.com/300x220?text=Negra" />
+        <span class="brand">YAKISITA</span>
+        <h3>Sandalia Negra Clásica</h3>
+        <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+        <p class="price">S/ 50.00</p>
+      </div>
+        <div class="product" data-price="40">
+        <span class="label">OFERTA</span>
+        <img src="plateado tx5 1.jpg" alt="Sandalia Plateado" />
+        <span class="brand">D'Mirella</span>
+        <h3>TACO X5 PLATEADO</h3>
+        <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+        <p class="price">S/ 40.00</p>
+      </div>
 
-    <!-- 10 productos con tallas del 5 al 9 -->
-    <div class="product" data-price="45.00">
-      <span class="label">OFERTA</span>
-      <img src="plateado tx5 1.jpg" alt="Sandalia Beige" />
-      <span class="brand">D´Mirella</span>
-      <h3>TACO X5 PLATEADO</h3>
-      <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
-      <p class="price">S/ 40.00</p>
+      <div class="product" data-price="50">
+        <span class="label new">Nuevo</span>
+        <img src="https://via.placeholder.com/300x220?text=Negra" />
+        <span class="brand">YAKISITA</span>
+        <h3>Sandalia Negra Clásica</h3>
+        <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+        <p class="price">S/ 50.00</p>
+      </div>
+      <div class="product" data-price="40">
+        <span class="label">OFERTA</span>
+        <img src="plateado tx5 1.jpg" alt="Sandalia Plateado" />
+        <span class="brand">D'Mirella</span>
+        <h3>TACO X5 PLATEADO</h3>
+        <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+        <p class="price">S/ 40.00</p>
+      </div>
+
+      <div class="product" data-price="50">
+        <span class="label new">Nuevo</span>
+        <img src="https://via.placeholder.com/300x220?text=Negra" />
+        <span class="brand">YAKISITA</span>
+        <h3>Sandalia Negra Clásica</h3>
+        <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+        <p class="price">S/ 50.00</p>
+      </div>
+      <div class="product" data-price="40">
+        <span class="label">OFERTA</span>
+        <img src="plateado tx5 1.jpg" alt="Sandalia Plateado" />
+        <span class="brand">D'Mirella</span>
+        <h3>TACO X5 PLATEADO</h3>
+        <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+        <p class="price">S/ 40.00</p>
+      </div>
+
+      <div class="product" data-price="50">
+        <span class="label new">Nuevo</span>
+        <img src="https://via.placeholder.com/300x220?text=Negra" />
+        <span class="brand">YAKISITA</span>
+        <h3>Sandalia Negra Clásica</h3>
+        <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+        <p class="price">S/ 50.00</p>
+      </div>
+      <!-- Agrega más productos (los 10 o 20 que quieras) -->
     </div>
 
-    <div class="product" data-price="50.00">
-      <span class="label new">Nuevo</span>
-      <img src="https://via.placeholder.com/300x220?text=Sandalia+Negra" alt="Sandalia Negra" />
-      <span class="brand">YAKISITA</span>
-      <h3>Sandalia Negra Clásica</h3>
-      <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
-      <p class="price">S/ 50.00</p>
-    </div>
-
-    <div class="product" data-price="55.00">
-      <span class="label">Destacado</span>
-      <img src="https://via.placeholder.com/300x220?text=Sandalia+Rosa" alt="Sandalia Rosa" />
-      <span class="brand">YAKISITA</span>
-      <h3>Sandalia Rosa Pastel</h3>
-      <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
-      <p class="price">S/ 55.00</p>
-    </div>
-
-    <div class="product" data-price="60.00">
-      <span class="label new">Nuevo</span>
-      <img src="https://via.placeholder.com/300x220?text=Sandalia+Dorada" alt="Sandalia Dorada" />
-      <span class="brand">YAKISITA</span>
-      <h3>Sandalia Dorada Fiesta</h3>
-      <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
-      <p class="price">S/ 60.00</p>
-    </div>
-
-    <div class="product" data-price="42.00">
-      <span class="label">Destacado</span>
-      <img src="https://via.placeholder.com/300x220?text=Sandalia+Blanca" alt="Sandalia Blanca" />
-      <span class="brand">YAKISITA</span>
-      <h3>Sandalia Blanca Simple</h3>
-      <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
-      <p class="price">S/ 42.00</p>
-    </div>
-
-    <div class="product" data-price="58.00">
-      <span class="label new">Nuevo</span>
-      <img src="https://via.placeholder.com/300x220?text=Sandalia+Verde" alt="Sandalia Verde" />
-      <span class="brand">YAKISITA</span>
-      <h3>Sandalia Verde Oliva</h3>
-      <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
-      <p class="price">S/ 58.00</p>
-    </div>
-
-    <div class="product" data-price="65.00">
-      <span class="label">Destacado</span>
-      <img src="https://via.placeholder.com/300x220?text=Sandalia+Plata" alt="Sandalia Plata" />
-      <span class="brand">YAKISITA</span>
-      <h3>Sandalia Plata Brillante</h3>
-      <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
-      <p class="price">S/ 65.00</p>
-    </div>
-
-    <div class="product" data-price="69.00">
-      <span class="label new">Nuevo</span>
-      <img src="https://via.placeholder.com/300x220?text=Sandalia+Marron" alt="Sandalia Marrón" />
-      <span class="brand">YAKISITA</span>
-      <h3>Sandalia Marrón Casual</h3>
-      <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
-      <p class="price">S/ 69.00</p>
-    </div>
-
-    <div class="product" data-price="72.00">
-      <span class="label">Destacado</span>
-      <img src="https://via.placeholder.com/300x220?text=Sandalia+Roja" alt="Sandalia Roja" />
-      <span class="brand">YAKISITA</span>
-      <h3>Sandalia Roja Fina</h3>
-      <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
-      <p class="price">S/ 72.00</p>
-    </div>
-
-    <div class="product" data-price="75.00">
-      <span class="label new">Nuevo</span>
-      <img src="https://via.placeholder.com/300x220?text=Sandalia+Celeste" alt="Sandalia Celeste" />
-      <span class="brand">YAKISITA</span>
-      <h3>Sandalia Celeste Verano</h3>
-      <div class="sizes"><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
-      <p class="price">S/ 75.00</p>
-    </div>
-
-  </div>
-
-  <a href="catalogo-dama.html" class="catalogo-section">CATÁLOGO DAMA</a>
-  <a href="catalogo-nina.html" class="catalogo-section">CATÁLOGO NIÑA</a>
-</main>
-
-<script>
-  const searchInput = document.getElementById("searchInput");
-  const products = document.querySelectorAll(".product");
-
-  searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase();
-    products.forEach(product => {
-      const name = product.querySelector("h3").textContent.toLowerCase();
-      product.style.display = name.includes(query) ? "block" : "none";
-    });
-  });
-
-  const sortSelect = document.getElementById("sortSelect");
-  const productList = document.getElementById("productList");
-  sortSelect.addEventListener("change", () => {
-    const value = sortSelect.value;
-    const sorted = Array.from(products).sort((a, b) => {
-      const priceA = parseFloat(a.dataset.price);
-      const priceB = parseFloat(b.dataset.price);
-      if (value === "low") return priceA - priceB;
-      if (value === "high") return priceB - priceA;
-      return 0;
-    });
-    sorted.forEach(p => productList.appendChild(p));
-  });
-</script>
-
+    <a href="catalogo-dama.html" class="catalogo-section">CATÁLOGO DAMA</a>
+    <a href="catalogo-nina.html" class="catalogo-section">CATÁLOGO NIÑA</a>
+  </main>
 </body>
+
 </html>
