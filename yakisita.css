@@ -1,0 +1,20 @@
+body {
+    margin:0;
+    background-color: white;
+}
+.div {
+    background-color: black;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1f1e1e;
+    color: beige;
+
+}
+th {
+    border: solid 4px black;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
